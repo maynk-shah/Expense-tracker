@@ -6,10 +6,10 @@ import { GlobalContext } from "../context/GlobalState";
 export const TransactionList = () => {
   const { transactions } = useContext(GlobalContext);
 
-  useEffect(() => {
-    localStorage.setItem("Texts", JSON.stringify(transactions));
-    // localStorage.setItem("Amount");
-  }, [transactions]);
+  // useEffect(() => {
+  //   localStorage.setItem("Texts", JSON.stringify(transactions));
+  //   // localStorage.setItem("Amount");
+  // }, [transactions]);
 
   // console.log(JSON.stringify(transactions));
   return (
@@ -17,10 +17,7 @@ export const TransactionList = () => {
       <h3>History</h3>
       <ul className="list">
         {transactions.map((transaction) => (
-          <Transaction
-            key={transaction.id}
-            transaction={transactions}
-          />
+          <Transaction key={transaction.id} transaction={transaction} />
         ))}
       </ul>
     </>
